@@ -9,15 +9,17 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 import styles from './Header.module.scss'
 import images from '~/assets/images'
 import { Wrapper as PopperWrapper } from '~/components/Popper';
+import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 // const cx = classNames.bind(styles)
 const classes = clsx(styles.wrapper)
 
 function Header() {
-    const [searchResult, setsearchResult] = useState([]);
+    const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         setTimeout(() => {
-            setsearchResult([1, 2])
+            setSearchResult([1, 2, 3])
         }, 0)
     }, [])
     return (
@@ -33,8 +35,12 @@ function Header() {
                         <div className={clsx(styles['search-result'])} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
                                 <h4 className={clsx(styles['search-title'])}>
-                                    
+                                    Accounts
                                 </h4>
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
                             </PopperWrapper>
                         </div>
                     )}>
@@ -50,7 +56,14 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={clsx(styles.action)}></div>
+                <div className={clsx(styles.action)}>
+                    <Button text>
+                        Upload
+                    </Button>
+                    <Button primary >
+                        Log In
+                    </Button>
+                </div>
             </div>
         </header>
     );

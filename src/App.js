@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Fragment } from "react";
 
-import Home from "~/pages/Home";
-import Following from "~/pages/Following";
 import { publicRoutes } from '~/routes'
 import { DefaultLayout } from "~/Layout";
 

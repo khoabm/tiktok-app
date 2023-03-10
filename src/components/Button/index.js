@@ -52,7 +52,7 @@ function Button({ outline = false,
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={clsx(styles['icon'])}>{leftIcon}</span>}
-            <span class={clsx(styles['title'])}>{children}</span>
+            <span className={clsx(styles['title'])}>{children}</span>
             {rightIcon && <span className={clsx(styles['icon'])}>{rightIcon}</span>}
         </Comp>
     );
